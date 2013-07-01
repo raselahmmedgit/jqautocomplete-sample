@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div id="indexPage">
+    <div>
+        Name (ASP.NET, PHP, SQL) : @Html.TextBox("txtName")
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#txtName').autocomplete(
+        {
+            source: '@Url.Action("GetData", "Home")'
+        });
+    })
+</script>
